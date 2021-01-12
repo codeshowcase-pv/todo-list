@@ -16,7 +16,8 @@ const store = createStore({
     },
     mutations: {
         add_new_todo(state, todo) {
-            state.todos.push(todo);
+            const new_todos = state.todos.concat([todo]);
+            state.todos = new_todos;
         },
         delete_todo(state, key) {
             state.todos.splice(key, 1);
